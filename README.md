@@ -46,6 +46,17 @@ Este repositorio contiene un proyecto de práctica para la asignatura 2024A-ISWD
 └── index.html
 ```
 
+- **css/styles.css**: Contiene los estilos CSS para la página web.
+- **images/background.jpg**: Imagen de fondo utilizada en la página web.
+- **js/app.js**: Archivo principal de JavaScript que inicializa la aplicación.
+- **js/modules/displayFunctions.js**: Contiene funciones para mostrar datos del Pokémon en la página.
+- **js/modules/fetchData.js**: Contiene la función para obtener datos de la API de PokeAPI.
+- **js/modules/tabFunctions.js**: Contiene funciones para manejar el cambio de pestañas en la interfaz.
+- **js/modules/utilityFunctions.js**: Contiene funciones utilitarias adicionales.
+- **index.html**: Archivo HTML principal que estructura la página web.
+
+## Uso
+
 ### Uso
 - Navega por la aplicación para ver información detallada del Pokémon.
 - Utiliza los botones "Anterior" y "Siguiente" para navegar por los movimientos del Pokémon.
