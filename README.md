@@ -1,8 +1,7 @@
 # Práctica-2024A-ISWD613-GR1SW-Aplicaciones-Web-P-IIB
 Este repositorio contiene un proyecto de práctica para la asignatura 2024A-ISWD613-GR1SW-Aplicaciones Web-P-IIB. La aplicación web muestra información detallada sobre un Pokémon específico usando la API de Pokémon
 
-![image](https://github.com/user-attachments/assets/8404ff2f-6131-4527-b331-a069c74ac45c)
-
+![image](https://github.com/user-attachments/assets/20bbcbc2-eab0-45b0-b2fb-87e6264e97bb)
 
 ## Características
 
@@ -57,7 +56,6 @@ Este repositorio contiene un proyecto de práctica para la asignatura 2024A-ISWD
 
 ## Uso
 
-### Uso
 - Navega por la aplicación para ver información detallada del Pokémon.
 - Utiliza los botones "Anterior" y "Siguiente" para navegar por los movimientos del Pokémon.
 
