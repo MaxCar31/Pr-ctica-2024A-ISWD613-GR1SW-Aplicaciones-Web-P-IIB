@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Squirtle</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Squirtle</h1>
+    </div>
+    <div class="image-container">
+      <img id="pokemon-image" src="images/background.jpg" alt="Squirtle" width="500" height="500">
+    </div>
+    <div class="content">
+      <div class="badges" id="pokemon-types"></div>
+      <div class="grid">
+        <div class="section">
+          <h2>Abilities</h2>
+          <div class="abilities" id="pokemon-abilities"></div>
+        </div>
+        <div class="section">
+          <h2>Moves</h2>
+          <div class="tablist" role="tablist">
+            <button type="button" role="tab" aria-selected="true" class="active" data-tab="level-up">Level Up</button>
+            <button type="button" role="tab" aria-selected="false" data-tab="tm-hm">TM/HM</button>
+          </div>
+          <div id="level-up" class="tabpanel">
+            <ul id="moves-list"></ul>
+            <div class="pagination">
+              <button id="prev-button">Anterior</button>
+              <button id="next-button">Siguiente</button>
+            </div>
+          </div>
+          <div id="tm-hm" class="tabpanel hidden">
+            <ul id="stats-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Desarrollado por Max Carrión <a href="https://github.com/maxcar31">GitHub</a></p>
+    </footer>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
