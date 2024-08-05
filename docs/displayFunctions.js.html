@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: displayFunctions.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: displayFunctions.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { capitalizeFirstLetter, formatMoveName, formatStatName } from './utilityFunctions.js';
+
+/**
+ * Registrar que los datos se obtuvieron correctamente
+ * @param {Object} data - Los datos obtenidos
+ */
+export function logDataFetched(data) {
+  console.log('Datos obtenidos correctamente:', data);
+}
+
+/**
+ * Mostrar el nombre del Pokémon en el encabezado
+ * @param {string} name - El nombre del Pokémon
+ */
+export function displayPokemonName(name) {
+  document.querySelector('.header h1').textContent = capitalizeFirstLetter(name);
+}
+
+/**
+ * Mostrar la imagen del Pokémon
+ * @param {string} imageUrl - La URL de la imagen del Pokémon
+ */
+export function displayPokemonImage(imageUrl) {
+  document.getElementById('pokemon-image').src = imageUrl;
+}
+
+/**
+ * Mostrar los tipos del Pokémon
+ * @param {Array} types - El array de tipos del Pokémon
+ */
+export function displayPokemonTypes(types) {
+  const typesContainer = document.getElementById('pokemon-types');
+  typesContainer.innerHTML = ''; // Limpiar los tipos existentes
+  types.forEach(type => {
+    const div = document.createElement('div');
+    div.classList.add('badge', `badge-${type.type.name}`);
+    div.textContent = capitalizeFirstLetter(type.type.name);
+    typesContainer.appendChild(div);
+  });
+}
+
+/**
+ * Mostrar las habilidades del Pokémon
+ * @param {Array} abilities - El array de habilidades del Pokémon
+ */
+export function displayPokemonAbilities(abilities) {
+  const abilitiesContainer = document.getElementById('pokemon-abilities');
+  abilitiesContainer.innerHTML = ''; // Limpiar las habilidades existentes
+  abilities.forEach(ability => {
+    const div = document.createElement('div');
+    div.classList.add('ability');
+    div.innerHTML = `&lt;h3>${capitalizeFirstLetter(ability.ability.name)}&lt;/h3>&lt;p>${ability.is_hidden ? '(Habilidad Oculta)' : ''}&lt;/p>`;
+    abilitiesContainer.appendChild(div);
+  });
+}
+
+// Variables para la paginación de movimientos
+let currentPage = 1;
+const movesPerPage = 10;
+let allMoves = [];
+
+/**
+ * Mostrar los movimientos del Pokémon con paginación
+ * @param {Array} moves - El array de movimientos del Pokémon
+ */
+export function displayPokemonMoves(moves) {
+  console.log('Mostrando los movimientos del Pokémon:', moves);
+  allMoves = moves;
+  currentPage = 1;
+  showMovesPage();
+}
+
+/**
+ * Mostrar la página actual de movimientos
+ */
+function showMovesPage() {
+  const movesContainer = document.getElementById('moves-list');
+  movesContainer.innerHTML = ''; // Limpiar los movimientos existentes
+
+  const startIndex = (currentPage - 1) * movesPerPage;
+  const endIndex = startIndex + movesPerPage;
+
+  const currentMoves = allMoves.slice(startIndex, endIndex);
+  currentMoves.forEach(move => {
+    const li = document.createElement('li');
+    li.textContent = formatMoveName(move.move.name);
+    movesContainer.appendChild(li);
+  });
+
+  document.getElementById('prev-button').disabled = currentPage === 1;
+  document.getElementById('next-button').disabled = endIndex >= allMoves.length;
+}
+
+/**
+ * Ir a la página anterior de movimientos
+ */
+export function prevMovesPage() {
+  if (currentPage > 1) {
+    currentPage--;
+    showMovesPage();
+  }
+}
+
+/**
+ * Ir a la página siguiente de movimientos
+ */
+export function nextMovesPage() {
+  const totalPages = Math.ceil(allMoves.length / movesPerPage);
+  if (currentPage &lt; totalPages) {
+    currentPage++;
+    showMovesPage();
+  }
+}
+
+/**
+ * Mostrar las estadísticas del Pokémon
+ * @param {Array} stats - El array de estadísticas del Pokémon
+ */
+export function displayPokemonStats(stats) {
+  const statsContainer = document.getElementById('stats-list');
+  statsContainer.innerHTML = ''; // Limpiar las estadísticas existentes
+  stats.forEach(stat => {
+    const li = document.createElement('li');
+    li.innerHTML = `&lt;strong>${formatStatName(stat.stat.name)}:&lt;/strong> ${stat.base_stat}`;
+    statsContainer.appendChild(li);
+  });
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#capitalizeFirstLetter">capitalizeFirstLetter</a></li><li><a href="global.html#displayPokemonAbilities">displayPokemonAbilities</a></li><li><a href="global.html#displayPokemonImage">displayPokemonImage</a></li><li><a href="global.html#displayPokemonMoves">displayPokemonMoves</a></li><li><a href="global.html#displayPokemonName">displayPokemonName</a></li><li><a href="global.html#displayPokemonStats">displayPokemonStats</a></li><li><a href="global.html#displayPokemonTypes">displayPokemonTypes</a></li><li><a href="global.html#fetchData">fetchData</a></li><li><a href="global.html#formatMoveName">formatMoveName</a></li><li><a href="global.html#formatStatName">formatStatName</a></li><li><a href="global.html#logDataFetched">logDataFetched</a></li><li><a href="global.html#nextMovesPage">nextMovesPage</a></li><li><a href="global.html#prevMovesPage">prevMovesPage</a></li><li><a href="global.html#setupTabSwitching">setupTabSwitching</a></li><li><a href="global.html#showMovesPage">showMovesPage</a></li><li><a href="global.html#showTab">showTab</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Sun Aug 04 2024 19:00:36 GMT-0500 (hora de Ecuador)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

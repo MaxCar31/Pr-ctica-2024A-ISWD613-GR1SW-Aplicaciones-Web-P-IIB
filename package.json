@@ -1,0 +1,16 @@
+{
+  "name": "pr-ctica-2024a-iswd613-gr1sw-aplicaciones-web-p-iib",
+  "version": "1.0.0",
+  "description": "Este repositorio contiene un proyecto de práctica para la asignatura 2024A-ISWD613-GR1SW-Aplicaciones Web-P-IIB. La aplicación web muestra información detallada sobre un Pokémon específico usando la API de Pokémon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "jsdoc -c jsdoc.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jsdoc": "^4.0.3"
+  }
+}
